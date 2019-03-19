@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+config/production.json
+logfile.log
+uncaughtExceptions.log
