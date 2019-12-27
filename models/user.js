@@ -1,6 +1,6 @@
 const config = require("config");
 const jwt = require("jsonwebtoken");
-const Joi = require("joi");
+const Joi = require("@hapi/joi");
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
@@ -59,7 +59,7 @@ function validateUser(user) {
     isAdmin: Joi.boolean().required()
   };
 
-  return Joi.validate(user, schema);
+  return schema.validate(user);
 }
 
 exports.User = User;

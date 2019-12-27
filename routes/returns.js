@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require("@hapi/joi");
 const validate = require("../middleware/validate");
 const { Rental } = require("../models/rental");
 const { Movie } = require("../models/movie");
@@ -33,7 +33,7 @@ function validateReturn(req) {
     movieId: Joi.objectId().required()
   };
 
-  return Joi.validate(req, schema);
+  return schema.validate(req);
 }
 
 module.exports = router;

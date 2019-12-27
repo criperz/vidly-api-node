@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require("@hapi/joi");
 const mongoose = require("mongoose");
 const { genreSchema } = require("./genre");
 
@@ -48,7 +48,7 @@ function validateMovie(movie) {
     liked: Joi.boolean()
   };
 
-  return Joi.validate(movie, schema);
+  return schema.validate(movie);
 }
 
 exports.Movie = Movie;

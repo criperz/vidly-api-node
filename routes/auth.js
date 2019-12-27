@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require("@hapi/joi");
 const bcrypt = require("bcryptjs");
 const _ = require("lodash");
 const { User } = require("../models/user");
@@ -32,7 +32,7 @@ function validate(req) {
       .required()
   };
 
-  return Joi.validate(req, schema);
+  return schema.validate(req);
 }
 
 module.exports = router;
